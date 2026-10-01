@@ -16,9 +16,9 @@ Manual testing may be resource-intensive and inconsistent
 * An evaluation service for developers and engineer to identify AI risks such as hallucination, harm, inappropriate usage
 
 ### GenAI Evaluation High Level Design
-![GESHLD](./ai/images/GES_HLD.png)
+![GESHLD](./images/GES_HLD.png)
 
 
 
 ### GenAI Evaluation Workflow
-![GESWF](./ai/images/GES_Workflow.png)
+![GESWF](./images/GES_Workflow.png)
