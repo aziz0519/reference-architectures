@@ -1,9 +1,9 @@
 # Sample Reference Architectures
 
 ## AI
-* AI Governance
-* Agentic Data Translator
-* Generative AI Evaluation Service
+* [AI Governance](/ai/Bias_Testing_SDK.md)
+* [Agentic Data Translator](./ai/Agentic_Data_Translator.md)
+* [Generative AI Evaluation Service](/ai/GenAI_Evaluation_Service.md)
 
 
 ## Analytics
@@ -23,3 +23,4 @@
 
 
 ## Security
+* Secure an application using the STRIDE framework
