@@ -9,8 +9,9 @@ The following repository is a collection of reference architectures for various 
 * [Bias Detection Toolkit](/ai/Bias_Testing_SDK.md)
 * [Agentic Data Translator](./ai/Agentic_Data_Translator.md)
 * [Generative AI Evaluation Service](/ai/GenAI_Evaluation_Service.md)
-* Agentic RAG Enterprise Knowledge Assistant in AWS
-* Production Grade Agentic AI Blueprint
+* [Agentic RAG Enterprise Knowledge Assistant in AWS](/ai/AWS_GenAI_Knowledge_Assistant.md)
+* [Production Grade Agentic AI Blueprint](/ai/Agentic_AI_Blueprint.md)
+* [AI Observability Toolkit](/ai/Observatory.md) 
 
 ## Analytics
 * Unified Data analytics Platform

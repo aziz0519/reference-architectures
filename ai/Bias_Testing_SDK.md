@@ -13,4 +13,12 @@
  * Lambda Functions
     * Invokes pipeline to generate bias testing reults on a CRON schedule
 * AWS Glue
-   * Peform data transformation 
+   * Peform data transformation with HMAC data and TransUnion data 
+
+## Bias Testing Process
+![BTHLD](./images/BT_Process.png)
+
+
+## Tech Stack
+* **Platform**: Databricks
+* **Database**: PostgreSQL
