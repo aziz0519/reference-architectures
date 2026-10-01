@@ -13,12 +13,37 @@
 Manual testing may be resource-intensive and inconsistent
 
 ## Requirements
-* An evaluation service for developers and engineer to identify AI risks such as hallucination, harm, inappropriate usage
+* An evaluation service for developers and engineers to identify AI risks such as hallucination, harm, inappropriate usage
 
 ### GenAI Evaluation High Level Design
 ![GESHLD](./images/GES_HLD.png)
 
+1. Input Questions, Output Responses and Reference Documents evaluated for AI risks.
+2. Context documents such as system prompts to build the GenAI system are also evaluated.
 
 
 ### GenAI Evaluation Workflow
 ![GESWF](./images/GES_Workflow.png)
+
+## Tech Stack
+* **Frontend**: Pivotal Cloud Foundry Springboot 
+* **Backend**: FastAPI and Claude Sonnet
+* **Storage**: Ceph S3
+* **Encryption**: Hashicorp Vault, Secure Access
+* **Observability**: Splunk and Dynatrace
+
+### GenAI Evaluation Service Reference Architecture
+
+![GESSA](./images/GenAi_Eval_Solution_Arch.png)
+
+
+### Outcomes
+Moderate / high risk were detected for:
+* Refusal of context-specific harmful and inappropriate usage attack prompts
+* Moonshot toxicity and jailbreak datasets
+
+Testing Outcome (Copilot Agents) - Democratizing AI while ensuring Risks are managed
+
+* Almost all generic attack prompts were detected and refused by content filter
+* Lower refusal rate for context-specific attack prompts but the responses are low toxicity
+* ChatBot in production has a low refusal rate,  and responses are detected to be promoting maliciousness
