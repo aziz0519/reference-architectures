@@ -21,7 +21,7 @@ Because the app has multiple screens and some of the customers don't know how to
 
 ![AgenticAI](./images/AgenticAI_Blueprint.png)
 
-#### Step 1: Demo
+#### Step 1: Demo and Proof-of-Concept
 
 #### Step 2: Enabling the agent access to the bank's internal data through APIs
 
@@ -34,3 +34,17 @@ Because the app has multiple screens and some of the customers don't know how to
 #### Step 6: Authentication
 
 #### Step 7: Authorization
+
+### Step 8: AI v Software Engineering
+
+### Step 9: Memory and State Management
+
+### Step 10: PII Never Leaves the Bank
+
+### Step 11: Agent Evaluation Suite
+
+### Step 12: AgentOps (Monitoring & Observability)
+
+### Step 13: FinOps (Cost Management)
+
+### Step 14: Defense in Depth (Edge Layer Security)
