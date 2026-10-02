@@ -23,6 +23,12 @@ Because the app has multiple screens and some of the customers don't know how to
 
 #### Step 1: Demo and Proof-of-Concept
 
+```mermaid
+flowchart LR
+    a["User Interface"] --> b["API"] --> c["Agent"] --> d["LLM"]
+
+```
+
 #### Step 2: Enabling the agent access to the bank's internal data through APIs
 
 #### Step 3: Create domain specific sub agents and assign only those tools it needs access to 
@@ -35,16 +41,16 @@ Because the app has multiple screens and some of the customers don't know how to
 
 #### Step 7: Authorization
 
-### Step 8: AI v Software Engineering
+#### Step 8: AI v Software Engineering
 
-### Step 9: Memory and State Management
+#### Step 9: Memory and State Management
 
-### Step 10: PII Never Leaves the Bank
+#### Step 10: PII Never Leaves the Bank
 
-### Step 11: Agent Evaluation Suite
+#### Step 11: Agent Evaluation Suite
 
-### Step 12: AgentOps (Monitoring & Observability)
+#### Step 12: AgentOps (Monitoring & Observability)
 
-### Step 13: FinOps (Cost Management)
+#### Step 13: FinOps (Cost Management)
 
-### Step 14: Defense in Depth (Edge Layer Security)
+#### Step 14: Defense in Depth (Edge Layer Security)
