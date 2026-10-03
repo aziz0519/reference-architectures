@@ -1,5 +1,5 @@
 # Enterprise Data Hub in AWS 
-> A unified analytics platform for service delivery and insights manangers to retrive accurate north-star metrics on a monthly and quarterly basis and extract actionable insights
+> A unified analytics platform for service delivery and insights managers to retrive accurate north-star metrics on a monthly and quarterly basis and drive actionable insights to improve customer contact centre experience
 
 ## Problem Statement
 * Data points are fragmented from various sources such as PDFs, chatbot and call logs
@@ -15,20 +15,34 @@
 ## Solution
 1. Integrate data sources into a single data lake.
 2. Data processing job will be automated and event-driven leveraging message queues and event buses.
-3. Data is ingested from isolated virtual private cloud (VPC) accounts to accomodate air-gapped netowrk architecture.
+3. Data is ingested from isolated virtual private cloud (VPC) accounts to accomodate air-gapped network architecture.
 4. PII information will be encrypted to SHA-256 UUID during migration to accomomdate data residency requirements.
 
 ## High Level Design
 ![EDHHLD](./images/EDH_HLD.png)
 
+* Collect data from multiple formats and channels
+* Keep original data before processing
+* Validate, cleanse, and transform before reporting
+* Separate raw, processed, and reporting-ready data
+* Give analysts flexible access to trusted datasets
+* Protects access, credentials, and operations across the flow
+
 
 ## Context Diagram
 ![EDHContextDiagram](./images/EDH_ContextDiagram.png)
 
+1. **Step Functions and EventBridge**:Daily trigger of batch job
+2. **AWS Glue**:1st Job stores into an object storage for original data
+3. **AWS Glue**:2nd Job stores into another object storage for process data
+4. **Redshift and DynamoDB**:New data points are mapped to tables in Data Warehouse and metadata is stored in non-relational DB
+5. **QuickSight and Athena**:Dashboards and query engines are refreshed with the new data points
+6. **S3 Glacier**: 1-year lifecycle policy to archive data as cold storage
+
 
 ## Architecture Trade-Offs
 * Batch trades freshness for simpler, predictable processing
-* Quality checks reduce incomplete or inconsistent reporting
+* Data quality checks reduce incomplete or inconsistent reporting
 * S3 preserves original data; lifecycle policies * manage storage cost
 * Redshift provides governed reporting; Athena supports flexible analysis
 * Role-based access separates business, analyst and admin responsibilities
@@ -40,6 +54,11 @@
 
 
 ## Business Outcomes
+* 40 operational dashboards containing critical KPIs recreated in new analytics platform ensuring minimal disruption
+* Service delivery and operation managers have role-based access to dashboards
+* Enabled business units that require manual uploads of dataset are ingested into a single point of access.
 
-
-## Point of Failure and Mitigation
+## Points of Failure and Mitigation
+| Failure | Impact | Mitigation |
+| --- | --- | --- |
+| API Timeout during batch ingestion | Incomplete data in dashboards | Delete partial data from latest batch job and retrigger pipeline ingestion
