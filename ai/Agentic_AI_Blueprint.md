@@ -25,11 +25,18 @@ Because the app has multiple screens and some of the customers don't know how to
 
 ```mermaid
 flowchart LR
+    subgraph Services
+        b
+        c
+    end 
+
     a["User Interface"] --> b["API"] --> c["Agent"] --> d["LLM"]
 
 ```
 
 #### Step 2: Enabling the agent access to the bank's internal data through APIs
+
+
 
 #### Step 3: Create domain specific sub agents and assign only those tools it needs access to 
 
