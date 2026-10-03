@@ -43,10 +43,14 @@ How should I interpret this field for reporting?
 
 ## Solutions Architecture
 
+#### SQL Querying for Data Products
 ![ADTSA](./images/ADT_Data_Products.png)
 
+#### SQL Querying for Core Products/GCO
+![ADTCoreGCO](./images/ADT_CoreGCO.png)
+
 * Demo and Minimum Viable Product
-* Guardrail Implementation
+* Guardrail Implementation (Credential and Output Validation Layer)
 * Clarification Mechanism
 * Caching Mechanism
 * Role-based and attribute-based access control
@@ -54,7 +58,9 @@ How should I interpret this field for reporting?
 
 ## Technical Stack
 * **Data Warehouse**: Databricks Lakebase
+* **Agentic Workflow**: Databricks Mosaic AI
 * **Metadata Management**: Atlan
+* **Caching**: Redis
 * **Object Storage**: Delta Lake Tables
 
 ## Business Outcomes

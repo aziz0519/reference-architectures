@@ -14,8 +14,9 @@ The following repository is a collection of reference architectures for various 
 * [AI Observability Toolkit](/ai/Observatory.md) 
 
 ## Analytics
-* Unified Data analytics Platform
-
+* [Enterprise Data Hub in AWS](/analytics/AWS_EnterpriseDataHub.md)
+* Lambda Architecture in Snowflake
+* Databricks Unity Catalog Architecture
 
 ## Migration and Modernization
 * Migration of workloads from on-prem to sovereign cloud
