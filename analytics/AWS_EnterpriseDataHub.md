@@ -52,13 +52,18 @@
 ## Sequence Diagram
 ![SequenceDiagram](./images/HLD_DE_SequenceDiagram.png)
 
+```
+Business view: Schedule → Process → Validate → Store → Report → Explore
+```
 
 ## Business Outcomes
 * 40 operational dashboards containing critical KPIs recreated in new analytics platform ensuring minimal disruption
 * Service delivery and operation managers have role-based access to dashboards
 * Enabled business units that require manual uploads of dataset are ingested into a single point of access.
+* Annual training for newly onboarding operation managers as part of business continuity planning 
 
 ## Points of Failure and Mitigation
 | Failure | Impact | Mitigation |
 | --- | --- | --- |
-| API Timeout during batch ingestion | Incomplete data in dashboards | Delete partial data from latest batch job and retrigger pipeline ingestion
+| API Timeout during batch ingestion | Incomplete data in dashboards | Delete partial data from latest batch job and retrigger pipeline ingestion |
+| Ingestion of daily CSV files are incomplete | Missing or incomplete data in dashboards | Check under the failure directory of the S3 Curated Bucket for missing data points, delete incomplete batch of data ingestion and retrigger the pipeline as of previous date |
