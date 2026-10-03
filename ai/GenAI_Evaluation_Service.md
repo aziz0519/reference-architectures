@@ -1,5 +1,5 @@
 # Generative AI Evaluation Service
-
+> An evaluation suite to detect conversational agents and chatbot for AI risk such as hallucination, harm, inappropriate usage and bias. Integrates with tone-of-voice evaluator to identify inappropriate outputs and overall agent behavior.
 
 
 ## Problem Statement
@@ -26,7 +26,7 @@ Manual testing may be resource-intensive and inconsistent
 ![GESWF](./images/GES_Workflow.png)
 
 ## Tech Stack
-* **Frontend**: Pivotal Cloud Foundry Springboot 
+* **Frontend**: Springboot in PCF 
 * **Backend**: FastAPI and Claude Sonnet
 * **Storage**: Ceph S3
 * **Encryption**: Hashicorp Vault, Secure Access
