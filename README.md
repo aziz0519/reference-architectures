@@ -6,7 +6,7 @@ The following repository is a collection of reference architectures for various 
 [![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
 
 ## AI
-* [Bias Detection Toolkit](/ai/Bias_Testing_SDK.md)
+* [Bias Detection in Public Cloud](/ai/Bias_Testing_to_Public_Cloud.md)
 * [Agentic Data Translator](./ai/Agentic_Data_Translator.md)
 * [Generative AI Evaluation Service](/ai/GenAI_Evaluation_Service.md)
 * [Agentic RAG Enterprise Knowledge Assistant in AWS](/ai/AWS_GenAI_Knowledge_Assistant.md)

@@ -1,19 +1,27 @@
 # Agentic Data Translator
 > A natural-language analytics agent that enables Product and Ops Teams to query in English and the system is able to generate the correct answers
 
+## Table of Contents
+1. [Problem Statement](#problem-statement)
+2. [Business Opportunity](#business-opportunity)
+3. [Solution](#solution)
+4. [Solutions Architecture](#solutions-architecture)
+5. [Technical Stack](#technical-stack)
+6. [Business Outcomes](#business-outcomes)
+
 ## Problem Statement
-* 3500+ business users and data analyst depend on specialist-served analytics
+* 3500+ business users and data analysts depend on specialist-served analytics
 * 2.0m ad-hoc SQL queries / year across the organization
 * Enterprise analytics today requires SQL / data specialist support, creating 2+ business day delays before users can access actionable insights
 
 ## Business Opportunity
 * Shift analysts time from query chasing to decision-making
-* Enable data analyst to directly explore data, interpret results, and answer business questions without needing to understand backend schemas, tables or SQL logic
+* Enable data analysts to directly explore data, interpret results, and answer business questions without needing to understand backend schemas, tables or SQL logic
 
 
 ## Solution
 * Agentic Data Translator (Text2SQL) for governed self-served analytics
-* NL chat interface that generate schema-aware SQL, retrieves data faster, reduces inconsistent query logic, and creates the foundation for conversational analytics across business units
+* Natural language chat interface that generate schema-aware SQL, retrieves data faster, reduces inconsistent query logic, and creates the foundation for conversational analytics across business units
 
 1. A multi-agent data assistant to solve
     * High cost of analytics: Too much time spent translating business into SQL
@@ -27,7 +35,7 @@
 
 3. Core/GCO Tables
 	* Used to understand what exists in Core/GCO
-	* Helps identify "What's available today vs What's in Data Products"
+	* Helps identify "What's available today? vs What's in Data Products?"
 	* Support data discovery and roadmap alignment
 
 4. Answers questions like 
@@ -69,3 +77,5 @@ How should I interpret this field for reporting?
 * 14.XM+ productivity opportunity at 35% efficiency gain
 * 504 queries processed
 * Active feedback loop driving SQL validation and continuous model improvement
+
+[Back To Top](#table-of-contents)
