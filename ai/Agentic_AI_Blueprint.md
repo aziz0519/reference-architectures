@@ -36,15 +36,226 @@ flowchart LR
 
 #### Step 2: Enabling the agent access to the bank's internal data through APIs
 
+```mermaid
+---
+look: classic
+layout: dagre
+---
+flowchart LR
+    subgraph Bank's Internal API
+        e
+        f
+        g
+        h
+    end 
 
+    a["User Interface"] 
+    b["API"]  
+    c["Agent"] 
+    d("LLM")
+    e["Balance Enquiry"]
+    f["Transaction Details"]
+    g["Statement Request"]
+    h["KYC Update"]
+
+    a --> b
+    b --> c
+    c --> d
+    c --> e
+    c --> f
+    c --> g
+    c --> h
+
+```
 
 #### Step 3: Create domain specific sub agents and assign only those tools it needs access to 
 
+```mermaid
+flowchart LR
+    subgraph Accounts Agent
+        e
+    end
+    subgraph Transaction Agent
+        f
+        g
+    end
+    subgraph Service Agent
+        h
+    end 
+
+    a["User Interface"] 
+    b["API"]  
+    c["Agent"] 
+    d("LLM")
+    e["Balance Enquiry"]
+    f["Transaction Details"]
+    g["Statement Request"]
+    h["KYC Update"]
+
+    a --> b
+    b --> c
+    c --> d
+    c --> e
+    c --> f
+    c --> g
+    c --> h
+
+```
+
 #### Step 4: Who decides which agent answers?
+```mermaid
+flowchart LR
+    subgraph Acccounts Tool
+        e
+    end
+    subgraph Transaction Tool
+        f
+        g
+    end
+    subgraph Service Tool
+        h
+    end
+    subgraph Agents
+        c
+        j
+        k
+        l
+    end
+
+    a["User Interface"] 
+    b["API"]  
+    c["Supervisor Agent"] 
+    d("LLM")
+    e["Balance Enquiry"]
+    f["Transaction Details"]
+    g["Statement Request"]
+    h["KYC Update"]
+    j["Accounts Agent"]
+    k["Transactions Agent"]
+    l["Service Agent"]
+
+    a --> b
+    b --> c
+    c --> d
+    c --> j
+    c --> k
+    c --> l 
+    j --> e 
+    k --> f
+    k --> g
+    l --> h 
+
+```
+
 
 #### Step 5: Expose tools via MCP servers to create a loosely coupled design
 
+```mermaid
+flowchart LR
+    subgraph Acccounts Tool
+        e
+    end
+    subgraph Transaction Tool
+        f
+        g
+    end
+    subgraph Service Tool
+        h
+    end
+    subgraph Agents
+        c
+        j
+        k
+        l
+    end
+
+    a["User Interface"] 
+    b["API"]  
+    c["Supervisor Agent"] 
+    d("LLM")
+    e["Balance Enquiry"]
+    f["Transaction Details"]
+    g["Statement Request"]
+    h["KYC Update"]
+    j["Accounts Agent"]
+    k["Transactions Agent"]
+    l["Service Agent"]
+    m("Accounts MCP Server")
+    n("Transactions MCP Server")
+    p("Service MCP Server")
+
+    a --> b
+    b --> c
+    c --> d
+    c --> j
+    c --> k
+    c --> l 
+    j --> m
+    k --> n
+    l --> p
+    m --> e
+    n --> f
+    n --> g
+    p --> h
+
+```
+
+
+
 #### Step 6: Authentication
+```mermaid
+flowchart LR
+    subgraph Acccounts Tool
+        e
+    end
+    subgraph Transaction Tool
+        f
+        g
+    end
+    subgraph Service Tool
+        h
+    end
+    subgraph Agents
+        c
+        j
+        k
+        l
+    end
+
+    a["User Interface"] 
+    b["API"]  
+    c["Supervisor Agent"] 
+    d("LLM")
+    e["Balance Enquiry"]
+    f["Transaction Details"]
+    g["Statement Request"]
+    h["KYC Update"]
+    j["Accounts Agent"]
+    k["Transactions Agent"]
+    l["Service Agent"]
+    m("Accounts MCP Server")
+    n("Transactions MCP Server")
+    p("Service MCP Server")
+    q["Authentication"]
+
+    a --> b
+    b --> c
+    c --> d
+    c --> j
+    c --> k
+    c --> l 
+    j --> m
+    k --> n
+    l --> p
+    m --> e
+    n --> f
+    n --> g
+    p --> h
+    a -.SAML.-> q
+
+
+```
+
 
 #### Step 7: Authorization
 

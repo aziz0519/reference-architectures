@@ -49,7 +49,8 @@
 4. **Redshift and DynamoDB**:New data points are mapped to tables in Data Warehouse and metadata is stored in non-relational DB
 5. **QuickSight and Athena**:Dashboards and query engines are refreshed with the new data points
 6. **S3 Glacier**: 1-year lifecycle policy to archive data as cold storage
-
+7. **Simple Queue Service**: FIFO Message queue system allowing business users to upload their flat files in order
+8. **Simple Notification Service**: Send notifications to user's emails for successful ingestion batch jobs and manual uploads
 
 ## Architecture Trade-Offs
 * Batch trades freshness for simpler, predictable processing
@@ -70,7 +71,7 @@ Business view: Schedule → Process → Validate → Store → Report → Explor
 ## Business Outcomes
 * 40 operational dashboards containing critical KPIs recreated in new analytics platform ensuring minimal disruption
 * Service delivery and operation managers have role-based access to dashboards
-* Enabled business units that require manual uploads of dataset are ingested into a single point of access.
+* Enabled business units that require manual uploads of datasets are ingested into a single point of access.
 * Annual training for newly onboarding operation managers as part of business continuity planning 
 
 ## Points of Failure and Mitigation

@@ -7,7 +7,7 @@
 3. [GenAI Eval Suite Workflow](#genai-evaluation-workflow)
 4. [GenAI Solutions Architecture](#genai-evaluation-service-reference-architecture)
 5. [Technical Stack](#technical-stack)
-6. [Outcomes from Red-Teaming and Drift Checks](#outcomes-from-red-teaming)
+6. [Outcomes from Red-Teaming and Drift Checks](#outcomes-from-red-teaming-and-drift-checks)
 
 ## Problem Statement
 #### A major fintech company has seen a surge in GenAI adoption over the past 3 years
