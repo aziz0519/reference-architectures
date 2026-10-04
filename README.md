@@ -9,7 +9,7 @@ The following repository is a collection of reference architectures for various 
 * [Bias Detection in Public Cloud](/ai/Bias_Testing_to_Public_Cloud.md)
 * [Agentic Data Translator](./ai/Agentic_Data_Translator.md)
 * [Generative AI Evaluation Service](/ai/GenAI_Evaluation_Service.md)
-* [Agentic RAG Enterprise Knowledge Assistant in AWS](/ai/AWS_GenAI_Knowledge_Assistant.md)
+* [GenAI Enterprise Knowledge Assistant in AWS](/ai/AWS_GenAI_Knowledge_Assistant.md)
 * [Production Grade Agentic AI Blueprint](/ai/Agentic_AI_Blueprint.md)
 * [AI Observability Toolkit](/ai/Observatory.md)
 * Policy-Driven Governance for Agentic Systems 

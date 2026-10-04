@@ -1,4 +1,4 @@
-# Architecting a proof-of-concept Agentic AI enterprise knowledge assistant in AWS
+# Architecting a proof-of-concept Generative AI enterprise knowledge assistant in AWS
 > A working version of an email bot and a voice bot which can identify the case category of the incoming enquiry, and for those cases that are identified to be simple and straightforward, a draft response with reference to the knowledge base is generated. The underlying models are continuously re-trained with reviews of the model outputs.
 
 
@@ -51,6 +51,37 @@ In addition to the resources outlined, any supplementary resources will be share
 
 * Security Controls
     * Implementing stringent security controls by segregating the infrastructure within the same AWS account. This includes creating separate authentication and authorization mechanisms, data stores, and other relevant components to ensure data integrity and confidentiality.
+
+## User Acceptance Testing
+**Step 1:** Split data into Calibration and Test 
+Sets
+* Divide dataset (potentially text or prompts) into subsets related to GenAI solution calibration, validation and testing. It helps to understand how your solution will perform on unseen data and what its generalization performance is.
+
+**Step 2:** Test data for Bias and Fairness
+* Ensure that a solution does not exhibit bias or unfair discrimination. Design testing to work across demographic groups and analyse data to identify potential biases.
+
+**Step 3:** Mitigate imbalanced dataset
+* Optimize solution with data with resampling techniques applied - under sample or oversample dataset or use synthetic data. 
+
+**Step 4:** Calibrate GenAI
+* Adjust hyperparameters and calibrate the prompt. 
+
+**Step 5:** Performance Metrics
+* Various metrics are used to evaluate the solution’s performance, depending on the problem type. Define what the KPIs and quantitative metrics are. 
+
+**Step 6:** Test Set Metrics
+* When evaluating a solution, it's important to look at how it performs on the testing set. It helps identify the solution's strengths and weaknesses.
+
+**Step 7:** Human (Key user) feedback
+* Often GenAI  solutions solve complex and sophisticated problems or are used for creative content generation, where definition of quantitative metrics is hard. Human feedback and domain expertise might be crucial in a development phase to allow for evaluation of the solution.
+
+## Evaluation Metrics
+* **Faithfulness:** How factually accurate is the generated answer against the user query?
+* **Answer Relevancy:** How relevant is the generated answer to the question?
+* **Context Precision:** The signal to noise ratio of retrieved context
+* **Context Recall:**: Can it retrieve all the relevant info required to answer the user query?
+
+#### Target Score: **70%** across all 4 metrics
 
 ## Business Outcomes
 
