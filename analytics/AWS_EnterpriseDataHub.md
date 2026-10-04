@@ -1,6 +1,17 @@
 # Enterprise Data Hub in AWS 
 > A unified analytics platform for service delivery and insights managers to retrive accurate north-star metrics on a monthly and quarterly basis and drive actionable insights to improve customer contact centre experience
 
+## Table of Contents
+1. [Problem Statement](#problem-statement)
+2. [Business Opportunity](#business-opportunity)
+3. [Solution](#solution)
+4. [High Level Design](#high-level-design)
+5. [Context Diagram](#context-diagram)
+6. [Architecture Trade Offs](#architecture-trade-offs)
+7. [Sequence Diagram](#sequence-diagram)
+8. [Business Outcomes](#business-outcomes)
+9. [Points of Failure and Mitigation](#points-of-failure-and-mitigation)
+
 ## Problem Statement
 * Data points are fragmented from various sources such as PDFs, chatbot and call logs
 * Critical KPIs are required to be updated with both historical data from legacy platform and new data from incumbent cloud platform. 
@@ -67,3 +78,5 @@ Business view: Schedule → Process → Validate → Store → Report → Explor
 | --- | --- | --- |
 | API Timeout during batch ingestion | Incomplete data in dashboards | Delete partial data from latest batch job and retrigger pipeline ingestion |
 | Ingestion of daily CSV files are incomplete | Missing or incomplete data in dashboards | Check under the failure directory of the S3 Curated Bucket for missing data points, delete incomplete batch of data ingestion and retrigger the pipeline as of previous date |
+
+[Back To Top](#table-of-contents)
