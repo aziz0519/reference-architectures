@@ -1,7 +1,14 @@
 # Architecting a proof-of-concept Generative AI enterprise knowledge assistant in AWS
 > A working version of an email bot and a voice bot which can identify the case category of the incoming enquiry, and for those cases that are identified to be simple and straightforward, a draft response with reference to the knowledge base is generated. The underlying models are continuously re-trained with reviews of the model outputs.
 
-
+1. [Problem Statement](#problem-statement)
+2. [Business Opportunity](#business-opportunity)
+3. [Solution](#solution)
+4. [AWS High Level Design](#aws-high-level-design)
+5. [Security Overview](#security-overview)
+6. [User Acceptance Test](#user-acceptance-testing)
+7. [Evaluation Metrics using RAGAS](#evaluation-metrics-using-ragas-framework)
+8. [Business Outcomes](#business-outcomes)
 
 ## Problem Statement
 The Customer Contact Centre Division is on a continuous transformational journey to reinvent the ways of working and deliver better services to citizens. The business seeks to embark on this journey which leverages the benefits of automation and artificial intelligence to boost its First Call Resolution (FCR) rate, while improving agent productivity and realizing operational efficiency savings.
@@ -75,7 +82,7 @@ Sets
 **Step 7:** Human (Key user) feedback
 * Often GenAI  solutions solve complex and sophisticated problems or are used for creative content generation, where definition of quantitative metrics is hard. Human feedback and domain expertise might be crucial in a development phase to allow for evaluation of the solution.
 
-## Evaluation Metrics
+## Evaluation Metrics using RAGAS framework
 * **Faithfulness:** How factually accurate is the generated answer against the retrieved context?
 * **Answer Relevancy:** How relevant is the generated answer to the question?
 * **Context Precision:** The signal to noise ratio of retrieved context

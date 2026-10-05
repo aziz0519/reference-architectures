@@ -1,7 +1,13 @@
 # Building a Production Grade Agentic AI Blueprint (BFSI)
 > Enabling a Agentic Banking application from demo to production at scale
 
-## The Business Context
+1. [Context](#context)
+2. [Problem Statement](#problem-statement)
+3. [Agentic AI Blueprint](#full-scale-agentic-ai-blueprint)
+    a. [Step 1: Demo and Proof-of-Concept](#step-1-demo-and-proof-of-concept)
+    b. [Step 2: ]
+
+## Context
 A bank's customer service lead has reported that 300,000 calls were made last month
 
 75% of them asked three questions:
@@ -9,7 +15,7 @@ A bank's customer service lead has reported that 300,000 calls were made last mo
 * What was this debit from my account?
 * Send me cheque book
 
-## The Business Problem
+## Problem Statement
 * Average call handling time, four minutes
 * Every year bank pays millions of dollars to the network provider
 
