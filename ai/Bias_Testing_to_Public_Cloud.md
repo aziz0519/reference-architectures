@@ -4,8 +4,8 @@
 ## Table of Contents
 1. [Problem Statement](#problem-statement)
 2. [Solution](#solution)
-3. [Bias Testing Process](#bias-testing-process)
-4. [Bias Testing on Databricks Architecture](#bias-testing-on-databricks-architecture-blueprint)
+3. [Bias Testing on Databricks HLD](#bias-testing-on-databricks-architecture-blueprint)
+4. [Bias Testing Process](#bias-testing-process)
 5. [Tech Stack](#tech-stack)
 
 ## Problem Statement
@@ -28,15 +28,15 @@ The Bias Testing SDK deployed on Databricks ensures that:
 * AWS Glue
    * Peform complex data transformation with encrypted and TransUnion data 
 
+## Bias Testing On Databricks Architecture Blueprint 
+![BTDBX](./images/Bias_Testing_DBX.png)
+
 ## Bias Testing Process
 ![BTHLD](./images/BT_Process.png)
 
-## Bias Testing On Databricks Architecture Blueprint
-![BTDBX](./images/Bias_Testing_DBX.png)
-
 **Step 1:** The user initiates the bias testing process by invoking the designated function and submitting the input parameters, which are then stored in a specified AWS S3 bucket
 
-**Step 2:** Upon receiving the input parameters, the development team triggers an internal workflow. This involves joining the user-provided train, test and validation datasets based on account numbers with corresponding account numbers from the TU dataset. The TU dataset can only be accessible for AI Foundations team.
+**Step 2:** Upon receiving the input parameters, the development team triggers an internal workflow. This involves joining the user-provided train, test and validation datasets based on account numbers with corresponding account numbers from the TU dataset. The TU dataset can only be accessible for the AI development team.
 
 **Step 3:** A bias testing analysis is then conducted. Once completed, the resulting bias testing report is generated and stored in the same S3 bucket as Step 1
 
@@ -44,8 +44,9 @@ The Bias Testing SDK deployed on Databricks ensures that:
 
 ## Tech Stack
 * **Platform**: Databricks
-* **Database**: PostgreSQL
+* **Metadata**: PostgreSQL
 * **Object Storage**: Simple Storage Service (S3)
 * **Tables**: Delta Lake Tables
+
 
 [Back To Top](#table-of-contents)
