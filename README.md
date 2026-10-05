@@ -12,11 +12,11 @@ The following repository is a collection of reference architectures for various 
 * [GenAI Enterprise Knowledge Assistant in AWS](/ai/AWS_GenAI_Knowledge_Assistant.md)
 * [Production Grade Agentic AI Blueprint](/ai/Agentic_AI_Blueprint.md)
 * [AI Observability Toolkit](/ai/Observatory.md)
-* Policy-Driven Governance for Agentic Systems 
+* [Policy-Driven Governance for Agentic Systems](./ai/Policy_Driven_AIGovernance.md) 
 
 ## Analytics
 * [Enterprise Data Hub in AWS](/analytics/AWS_EnterpriseDataHub.md)
-* Lambda Architecture in Snowflake
+* [Lambda Architecture in Snowflake](/analytics/DataEngineering_LambdaArch.md)
 * Databricks Unity Catalog Architecture
 
 ## Migration and Modernization

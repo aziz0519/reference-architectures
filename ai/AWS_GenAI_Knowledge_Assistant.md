@@ -76,7 +76,7 @@ Sets
 * Often GenAI  solutions solve complex and sophisticated problems or are used for creative content generation, where definition of quantitative metrics is hard. Human feedback and domain expertise might be crucial in a development phase to allow for evaluation of the solution.
 
 ## Evaluation Metrics
-* **Faithfulness:** How factually accurate is the generated answer against the user query?
+* **Faithfulness:** How factually accurate is the generated answer against the retrieved context?
 * **Answer Relevancy:** How relevant is the generated answer to the question?
 * **Context Precision:** The signal to noise ratio of retrieved context
 * **Context Recall:**: Can it retrieve all the relevant info required to answer the user query?
