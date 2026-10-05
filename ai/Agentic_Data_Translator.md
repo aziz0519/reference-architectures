@@ -78,4 +78,10 @@ How should I interpret this field for reporting?
 * 504 queries processed
 * Active feedback loop driving SQL validation and continuous model improvement
 
+## Points of Failure and Mitigation
+| Failure  | Impact | Mitigation |
+| --- | --- | --- |
+| Incorrect SQL executes cleanly | Wrong numbers are shipped to exec | Metric-layer lining for known metrics; join-grain lint (fan out detection on 1:N joins feeding `SUM`); show SQL and tables used; sanity-band checks vs historical values of known metrics; "verified" indicator only for metric-layer answers| 
+Hallucinated table/column | Visible error, retry latency | Catalog existence check pre-execution; error-driven re-retrieval |
+
 [Back To Top](#table-of-contents)

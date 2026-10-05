@@ -46,6 +46,129 @@ In addition to the resources outlined, any supplementary resources will be share
 4. Permission Boundaries 
 * Infrastructure-level access and encryption protocols will be implemented, while network configurations and developer access will remain consistent across both domains.
 
+## Email Bot Sequence Diagram
+```mermaid
+sequenceDiagram
+    autonumber
+
+    actor FP as Feedback Provider
+    participant M365 as M365 Email Server
+    participant SN as ServiceNow CRM
+    participant API as Email Bot API
+    participant BOT as Email Bot
+    participant AI as AI Model
+    actor CSO as CSO
+
+    %% 1-4: Email ingestion and processing
+    FP->>M365: 1. Send feedback email
+    SN->>M365: 2. Pull email from mail server
+    M365-->>SN: Return email content
+
+    SN->>API: 3. Push email data for processing
+    API->>BOT: Forward email content
+    BOT->>AI: 4. Extract and process email contents
+    AI-->>BOT: Extracted information / fields
+
+    %% 5: Return extracted fields
+    BOT-->>API: 5. Return necessary case fields
+    API-->>SN: Return extracted fields
+
+    %% 6: Case creation
+    SN->>SN: 6. Create case in review mode\nwith pre-populated details
+
+    %% 7: Determine whether automatic case creation is possible
+    alt Automatic case creation = YES
+        SN->>SN: 7b. Automatically create case
+    else Automatic case creation = NO
+        SN->>CSO: 7a. Present case in review mode
+
+        alt Case details are correct
+            CSO->>SN: 7a.1 Click "Create Case"
+            SN->>SN: Create case
+        else Case details are inaccurate
+            CSO->>SN: 7a.2 Modify inaccurate details
+            CSO->>SN: Create case
+            SN->>SN: Create corrected case
+        end
+    end
+
+    %% 8: Automated vs manual response
+    SN->>SN: Determine automatic email response
+
+    alt Automatic email response = YES
+        SN->>BOT: Generate / retrieve draft response
+        BOT->>AI: Generate email response
+        AI-->>BOT: Draft response
+        BOT-->>SN: Return draft response
+        SN->>M365: 8b. Automatically send email
+        M365-->>FP: Send response to Feedback Provider
+
+    else Automatic email response = NO
+        SN->>CSO: Provide draft response
+        CSO->>M365: 8a. Manually send email
+        M365-->>FP: Send response to Feedback Provider
+    end
+
+    %% 9-10: Case closure and interaction processing
+    SN->>SN: Initiate case closure
+    SN->>API: 9. Send all interaction details
+    API->>BOT: Forward case interactions
+    BOT->>AI: 10. Process interactions
+    AI-->>BOT: Processed interaction data
+
+    %% 11-12: Summary and closure
+    BOT-->>API: 11. Return generated case summary
+    API-->>SN: Return case summary
+    SN->>SN: Generate/store case summary
+    SN->>SN: 12. Close case
+```
+
+## Voice Bot Sequence Diagram
+```mermaid
+sequenceDiagram
+    actor Caller
+    participant AICSO as AICSO / IVR
+    participant Context as Context & Intent Engine
+    participant GenAI as GenAI
+    participant KB as Knowledge Base
+    participant Agent as Live Agent
+    participant Analytics as Post-Call Analytics
+
+    Caller->>AICSO: Voice query
+    AICSO->>Context: Transcribed query
+    Context->>Context: Identify intent / keywords
+
+    alt AICSO can resolve query
+        Context->>GenAI: Query + context
+        GenAI->>KB: Retrieve relevant knowledge
+        KB-->>GenAI: Relevant information
+        GenAI-->>AICSO: Generated response
+        AICSO-->>Caller: Voice response
+
+        alt Caller confirms resolution
+            AICSO->>Analytics: Send completed interaction
+        else Caller has follow-up
+            Caller->>AICSO: Follow-up query
+            AICSO->>Context: Re-identify intent
+            Context->>GenAI: Process follow-up
+            GenAI->>KB: Retrieve knowledge
+            KB-->>GenAI: Relevant information
+            GenAI-->>AICSO: Response
+            AICSO-->>Caller: Voice response
+        end
+
+    else AICSO cannot resolve query
+        Context->>Agent: Transfer call + context
+        Agent-->>Caller: Human assistance
+        Agent->>Analytics: Send interaction details
+    end
+
+    Analytics->>Analytics: Store conversation
+    Analytics->>Analytics: Sentiment & performance analysis
+    Analytics-->>AICSO: Insights / KPIs
+```
+
+
 ## Security Overview
 * Automated Pipeline
     * Implementing an automated pipeline to update the KBs as needed, ensuring they are always current and relevant.
