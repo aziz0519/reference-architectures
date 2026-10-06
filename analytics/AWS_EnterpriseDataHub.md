@@ -7,10 +7,11 @@
 3. [Solution](#solution)
 4. [High Level Design](#high-level-design)
 5. [Context Diagram](#context-diagram)
-6. [Architecture Trade Offs](#architecture-trade-offs)
-7. [Sequence Diagram](#sequence-diagram)
-8. [Business Outcomes](#business-outcomes)
-9. [Points of Failure and Mitigation](#points-of-failure-and-mitigation)
+6. [Context Diagram for Call Channels](#context-diagram-for-call-channels)
+7. [Architecture Trade Offs](#architecture-trade-offs)
+8. [Sequence Diagram](#sequence-diagram)
+9. [Business Outcomes](#business-outcomes)
+10. [Points of Failure and Mitigation](#points-of-failure-and-mitigation)
 
 ## Problem Statement
 * Data points are fragmented from various sources such as PDFs, chatbot and call logs
@@ -55,12 +56,16 @@
 ## Context Diagram for Call Channels
 ![IVRS](./images/IVRS_EDH.png)
 
+1. **Polly**
+2. **Amazon Connect**
+3. **Kinesis Streams**
+4. **Kinesis Firehose**
 
 ## Architecture Trade-Offs
 * Batch trades freshness for simpler, predictable processing
 * Data quality checks reduce incomplete or inconsistent reporting
 * S3 preserves original data; lifecycle policies * manage storage cost
-* Redshift provides governed reporting; Athena supports flexible analysis
+* Amazon Redshift provides governed reporting; Athena supports flexible analysis
 * Role-based access separates business, analyst and admin responsibilities
 * Monitoring, metadata and notifications support reliable operations
 
