@@ -52,6 +52,10 @@
 7. **Simple Queue Service**: FIFO Message queue system allowing business users to upload their flat files in order
 8. **Simple Notification Service**: Send notifications to user's emails for successful ingestion batch jobs and manual uploads
 
+## Context Diagram for Call Channels
+![IVRS](./images/IVRS_EDH.png)
+
+
 ## Architecture Trade-Offs
 * Batch trades freshness for simpler, predictable processing
 * Data quality checks reduce incomplete or inconsistent reporting
