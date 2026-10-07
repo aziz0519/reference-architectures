@@ -4,8 +4,9 @@
 1. [Context](#context)
 2. [Problem Statement](#problem-statement)
 3. [Agentic AI Blueprint](#full-scale-agentic-ai-blueprint)
-    a. [Step 1: Demo and Proof-of-Concept](#step-1-demo-and-proof-of-concept)
-    b. [Step 2: ]
+4. [Step 1: Demo and Proof-of-Concept](#step-1-demo-and-proof-of-concept)
+5. [Step 2: Enabling Agent access to the Bank's API ](#step-2-enabling-the-agent-access-to-the-banks-internal-data-through-apis)
+6. [Step 3: Introduce Domain-specific Agents](#step-3-create-domain-specific-sub-agents-and-assign-only-those-tools-it-needs-access-to)
 
 ## Context
 A bank's customer service lead has reported that 300,000 calls were made last month
