@@ -9,6 +9,9 @@ Supply chain managers requires a reporting platform to gain a 360 view of busine
 1. Requires real-time analytics view of supply chain management activities
 2. Requires management reporting dashboard to view quarterly statistics such as customer satisfaction and net promoter scores
 
+## High Level Design
+![LambdaArch](./images/LambdaArch_HLD.png)
+
 ## Technical Stack
 * **Platform:**: Snowflake
 * **Storage**: Apache Iceberg Tables
