@@ -377,6 +377,7 @@ flowchart LR
     subgraph Observability
     A
     B
+    C
     end
 
     A["Prompts </br> Agent Calls </br> Tool Calls"]
