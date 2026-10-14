@@ -206,7 +206,7 @@ flowchart LR
     p --> h
 
 ```
-
+* MCPs decouple agents from tools by routing capabilities through dedicated modular servers
 
 
 #### Step 6: Authentication
@@ -260,22 +260,136 @@ flowchart LR
     p --> h
     a -.SAML.-> q
 
-
 ```
 
 
 #### Step 7: Authorization
 
-#### Step 8: AI v Software Engineering
+```mermaid
+flowchart LR
+    subgraph Acccounts Tool
+        e
+    end
+    subgraph Transaction Tool
+        f
+        g
+    end
+    subgraph Service Tool
+        h
+    end
+    subgraph Agents
+        c
+        j
+        k
+        l
+    end
 
+    a["User Interface"] 
+    b["API"]  
+    c["Supervisor Agent"] 
+    d("LLM")
+    e["Balance Enquiry"]
+    f["Transaction Details"]
+    g["Statement Request"]
+    h["KYC Update"]
+    j["Accounts Agent"]
+    k["Transactions Agent"]
+    l["Service Agent"]
+    m("Accounts MCP Server")
+    n("Transactions MCP Server")
+    p("Service MCP Server")
+    q["Authentication"]
+    r["Authorization </br> RBAC </br> ABAC"]
+
+    a --> b
+    b --> c
+    c --> d
+    c --> j
+    c --> k
+    c --> l 
+    j --> m
+    k --> n
+    l --> p
+    m --> e
+    n --> f
+    n --> g
+    p --> h
+    a -.SAML.-> q
+    r --> c
+
+```
+
+#### Step 8: Split LLM into Self-Hosted and Open Weight
+```mermaid
+flowchart LR
+    subgraph LLM
+    a
+    b
+    end
+
+    a["Self-hosted"]
+    b["Open-Weight models"]
+
+```
 #### Step 9: Memory and State Management
+```mermaid
+flowchart LR
+    A[("Session Store")]
+```
+
+```mermaid
+flowchart TD
+    subgraph Session Store
+    A
+    B
+    C
+    D
+    end
+    A["Working Memory / Context RAM"]
+    B["Procedural Memory"]
+    C["Epsiodic Memory"]
+    D["Semantic Memory"]
+
+    B -.skillmd.-> A
+    C -.RAG (topic search).-> A
+    D -.RAG for relevance.-> A
+```
+##### Types of Memory
+* Working Memory: Current session memory
+* Episodic Memory: Dated events and past chat history
+* Semantic Memory: Durable facts and user profile
+* Procedural Memory: Instructions and Skills
 
 #### Step 10: PII Never Leaves the Bank
-
+```mermaid
+flowchart LR
+    A["PII Redaction"]
+```
 #### Step 11: Agent Evaluation Suite
+```mermaid
+flowchart LR
+    A["Agent Eval Suite </br> RAGAS </br> DeepEval </br> LLM-as-a-Judge"]
+```
 
-#### Step 12: AgentOps (Monitoring & Observability)
+#### Step 12: AgentOps and LLMOps (Monitoring & Observability)
+```mermaid
+flowchart LR
+    subgraph Observability
+    A
+    B
+    end
 
+    A["Prompts </br> Agent Calls </br> Tool Calls"]
+    B["CPU </br> Memory </br> Disk Utilization"]
+    C["p95/p99 Latency"]
+```
 #### Step 13: FinOps (Cost Management)
-
+```mermaid
+flowchart LR
+    A["Cost Management </br> Cost per request </br> Cost per Agent Call </br> Cost per Tool Call"]
+```
 #### Step 14: Defense in Depth (Edge Layer Security)
+```mermaid
+flowchart LR
+    A["Edge Layer Security </br> Web Application Firewall </br> DDoS </br> Rate Limits </br> API Gateway"]
+```
