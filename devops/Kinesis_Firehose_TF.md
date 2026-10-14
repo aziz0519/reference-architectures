@@ -1,0 +1,1 @@
+# Provisioning AWS Kinesis and Firehouse for Streaming Data Pipeline using Terraform

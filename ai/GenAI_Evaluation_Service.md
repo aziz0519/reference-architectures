@@ -6,8 +6,10 @@
 2. [Solution](#solution)
 3. [GenAI Eval Suite Workflow](#genai-evaluation-workflow)
 4. [GenAI Solutions Architecture](#genai-evaluation-service-reference-architecture)
-5. [Technical Stack](#technical-stack)
-6. [Outcomes from Red-Teaming and Drift Checks](#outcomes-from-red-teaming-and-drift-checks)
+5. [Evaluation Metrics](#evaluation-metrics)
+6. [Hallucination Evaluation Methodology](#hallucination-evaluation-methodology)
+7. [Technical Stack](#technical-stack)
+8. [Outcomes from Red-Teaming and Drift Checks](#outcomes-from-red-teaming-and-drift-checks)
 
 ## Problem Statement
 #### A major fintech company has seen a surge in GenAI adoption over the past 3 years
@@ -36,8 +38,37 @@ Manual testing may be resource-intensive and inconsistent
 
 ![GESSA](./images/GenAi_Eval_Solution_Arch.png)
 
+## Evaluation Metrics
+| Principle | Description | Risk | Definition |
+| --- | --- | --- | --- |
+| Robustness | Individuals know that the AI system will perform according to intended purposes, even when encountering unexpected outputs </br> In the context of LLM evals, this principle may also encompass assessing the ability of a LLM to generate accurate output and not "hallucinate" | Hallucination </br> Inappropriate Usage | **Factuality Hallucination** - incorrect content due to limited context / noise </br> **Factual inconsistency** - incorrectly stated facts </br> Factual fabrication - unverifiable fictitious narrative </br> **Faithfulness Hallucination** - content inconsistent with the source (e.g.) </br> **Instruction consistency** - ignores specific instructions given by the user </br> **Context inconsistency** - answers not present in context/ contradicts context </br> **Malicious Usage** - unethical usage with the intent to identify *general exploits* and domain-specific exploits within the district context within a particular industry/field |
+| Fairness | Individuals know that the AI does not unintentionally discriminate | Harm </br> Bias | Toxicity - hate expressions (e.g. hate speech), abusive language and personal attacks that intent to frighten, control or harm someone, physically or emotionally | 
+
+## Hallucination Evaluation Methodology
+
+```mermaid
+flowchart LR
+    A(("Query"))
+    B(("Context"))
+    C(("LLM Response"))
+    D["Sentence tokenize the LLM response"]
+    E["For each sentence in each LLM response, identify top n context chunks"]
+    F["Calculate RAGAS Faithfulness and Vectara hallucination model score for the sentence in response against similar context chunks"]
+    G["Aggregate Results </br> Analyze justification for for faithfulness score"]
+
+    A --> D
+    B --> D
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+```
+### Addressing the Constraints
+* Limited availability of context document universe - Focus on evaluation generation component
+* Limited context window length - Focus on sentence context chunk evaluation
+
 ## Technical Stack
-* **Frontend**: Springboot in PCF 
+* **Frontend**: Springboot in Pivotal Cloud Foundry 
 * **Backend**: FastAPI and Claude Sonnet
 * **Object Storage**: Ceph S3
 * **Encryption**: Hashicorp Vault, Secure Access
