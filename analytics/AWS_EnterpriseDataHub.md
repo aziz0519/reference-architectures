@@ -11,17 +11,19 @@
 7. [Architecture Trade Offs](#architecture-trade-offs)
 8. [Sequence Diagram](#sequence-diagram)
 9. [Business Outcomes](#business-outcomes)
-10. [Points of Failure and Mitigation](#points-of-failure-and-mitigation)
+10. [Failure Mode and Mitigation](#failure-modes-and-mitigation)
+11. [Day 2 Operations](#day-2-operations)
 
 ## Problem Statement
 * Data points are fragmented from various sources such as PDFs, chatbot and call logs
 * Critical KPIs are required to be updated with both historical data from legacy platform and new data from incumbent cloud platform. 
-* ~50,000 cases/month from various channels such as physical walk-ins, emails, web portal, call stream and interactive chatbot.  
+* ~50,000 cases/month from various channels such as physical walk-ins, emails, web portal, call stream and interactive chatbot. 
+* No machine learning capability to analyze customer sentiments and perform anomaly detection to monitor high volume of escalated cases 
 
 ## Business Opportunity
 1. Create a one-stop data analytics platform where users can generate and view reports from a single source of truth
 2. Address discoverability gap and accelerating time-to-insights
-3. Enable management to obtain a 360 view of contact centre operations
+3. Enable senior leaders and management to obtain a 360 view of contact centre operations
 
 
 ## Solution
@@ -83,10 +85,17 @@ Business view: Schedule → Process → Validate → Store → Report → Explor
 * Enabled business units that require manual uploads of datasets are ingested into a single point of access.
 * Annual training for newly onboarding operation managers as part of business continuity planning 
 
-## Points of Failure and Mitigation
+## Failure Modes and Mitigation
 | Failure | Impact | Mitigation |
 | --- | --- | --- |
-| API Timeout during batch ingestion | Incomplete data in dashboards | Delete partial data from latest batch job and retrigger pipeline ingestion |
-| Ingestion of daily CSV files are incomplete | Missing or incomplete data in dashboards | Check under the failure directory of the S3 Curated Bucket for missing data points, delete incomplete batch of data ingestion and retrigger the pipeline as of previous date |
+| API Timeout during batch ingestion | Incomplete data in dashboards | Delete partial data from latest batch job and retrigger pipeline ingestion from previous day in Step Function |
+| Ingestion of daily CSV files are incomplete | Missing or incomplete data in dashboards | Check under the failure directory of the S3 Curated Bucket for missing data points, delete incomplete batch of data ingestion and retrigger the pipeline as of previous date from Step Functions |
+| Missing historical data from SaaS platform | Inaccurate and stale data in reporting dashboards | |
+
+## Day 2 Operations
+* Managing incident and service requests from business users
+* Monitoring data, schema and model drift from tables and machine learning models
+* Disaster recovery exercises and business continuity planning
+* Managing change requests for enhancement data analytic platform (e.g. new dashboards, GenAI and Agentic AI initiatives)
 
 [Back To Top](#table-of-contents)
