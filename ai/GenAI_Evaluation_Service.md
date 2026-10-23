@@ -85,4 +85,7 @@ Testing Outcome (Copilot Agents) - Democratizing AI while ensuring Risks are man
 * Lower refusal rate for context-specific attack prompts but the responses are low toxicity
 * ChatBot in production has a low refusal rate,  and responses are detected to be promoting maliciousness
 
+## Additional References
+[GenAI Evaluation Frameworks](https://github.com/aziz0519/reference-architectures/wiki/GenAI-Evaluation-Frameworks)
+
 [Back To Top](#table-of-contents)

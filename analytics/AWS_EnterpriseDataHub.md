@@ -90,7 +90,7 @@ Business view: Schedule → Process → Validate → Store → Report → Explor
 | --- | --- | --- |
 | API Timeout during batch ingestion | Incomplete data in dashboards | Delete partial data from latest batch job and retrigger pipeline ingestion from previous day in Step Function |
 | Ingestion of daily CSV files are incomplete | Missing or incomplete data in dashboards | Check under the failure directory of the S3 Curated Bucket for missing data points, delete incomplete batch of data ingestion and retrigger the pipeline as of previous date from Step Functions |
-| Missing historical data from SaaS platform | Inaccurate and stale data in reporting dashboards | |
+| Missing historical data from SaaS platform | Inaccurate and stale data in reporting dashboards | Perform backfilling based on the date range of the missing data points |
 
 ## Day 2 Operations
 * Managing incident and service requests from business users
