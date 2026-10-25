@@ -4,18 +4,19 @@
 ## Table of Contents
 1. [Problem Statement](#problem-statement)
 2. [Business Opportunity](#business-opportunity)
-3. [Solution](#solution)
-4. [High Level Design](#high-level-design)
-5. [Context Diagram](#context-diagram)
-6. [Context Diagram for Call Channels](#context-diagram-for-call-channels)
-7. [Architecture Trade Offs](#architecture-trade-offs)
-8. [Sequence Diagram](#sequence-diagram)
-9. [Business Outcomes](#business-outcomes)
-10. [Failure Mode and Mitigation](#failure-modes-and-mitigation)
-11. [Day 2 Operations](#day-2-operations)
+3. [Benefits of Moving Analytics from On-Premises to Cloud](#benefit-of-moving-analytics-from-on-premises-to-cloud)
+4. [Solution](#solution)
+5. [High Level Design](#high-level-design)
+6. [Context Diagram](#context-diagram)
+7. [Context Diagram for Call Channels](#context-diagram-for-call-channels)
+8. [Architecture Trade Offs](#architecture-trade-offs)
+9. [Sequence Diagram](#sequence-diagram)
+10. [Business Outcomes](#business-outcomes)
+11. [Failure Mode and Mitigation](#failure-modes-and-mitigation)
+12. [Day 2 Operations](#day-2-operations)
 
 ## Problem Statement
-* Data points are fragmented from various sources such as PDFs, chatbot and call logs
+* Data points at on-premises are fragmented from various sources such as PDFs, chatbot and call logs
 * Critical KPIs are required to be updated with both historical data from legacy platform and new data from incumbent cloud platform. 
 * ~50,000 cases/month from various channels such as physical walk-ins, emails, web portal, call stream and interactive chatbot. 
 * No machine learning capability to analyze customer sentiments and perform anomaly detection to monitor high volume of escalated cases 
@@ -25,6 +26,15 @@
 2. Address discoverability gap and accelerating time-to-insights
 3. Enable senior leaders and management to obtain a 360 view of contact centre operations
 
+## Benefit of Moving Analytics from On-Premises to Cloud
+1. Reduces cost by taking advantages of new pricing models (pay-as-you-go)
+2. Plan for business continuity and disaster recovery by storing data in multiple zones and regions
+3. Manage disaster recovery automatically using fully managed services
+4. Centralize data governance and access management
+5. Increase productivity and reduce operational costs
+6. Greater data sharing across the organization
+7. Extended access by different personas
+8. Reduced latency of accessing data
 
 ## Solution
 1. Integrate data sources into a single data lake.
