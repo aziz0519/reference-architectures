@@ -54,46 +54,46 @@
 ## The ask
 > Propose an end-to-end reference architecture covering the full data lifecycle. Your response should address each of the following capability areas:
 1. Ingestion
-•	Batch, streaming and CDC patterns.
-•	Schema evolution and source variety.
-•	Late-arriving and out-of-order data.
+    * Batch, streaming and CDC patterns.
+    * Schema evolution and source variety.
+    * Late-arriving and out-of-order data.
 2. Storage and zoning
-•	Zone design (raw / curated / consumption, or equivalent).
-•	File and table format choices.
-•	Partitioning, clustering and compaction strategy.
+    * Zone design (raw / curated / consumption, or equivalent).
+    * File and table format choices.
+    * Partitioning, clustering and compaction strategy.
 3. Transformation and processing
-•	Engine choices and when to use which.
-•	Orchestration and dependency management.
-•	Support for SQL-first and code-first practitioners.
-•	Testing, CI/CD and data contracts.
+    * Engine choices and when to use which.
+    * Orchestration and dependency management.
+    * Support for SQL-first and code-first practitioners.
+    * Testing, CI/CD and data contracts.
 4. Analytics and consumption
-•	BI, ad-hoc analytics, ML and feature stores.
-•	Data sharing with internal and external consumers.
-•	Semantic layer and self-service strategy.
+    * BI, ad-hoc analytics, ML and feature stores.
+    * Data sharing with internal and external consumers.
+    * Semantic layer and self-service strategy.
 5. Identity and access
-•	Authentication and federation.
-•	Fine-grained authorisation — row, column, and tag-based controls.
-•	Service identities vs human identities.
+    * Authentication and federation.
+    * Fine-grained authorisation — row, column, and tag-based controls.
+    * Service identities vs human identities.
 6. Governance
-•	Catalog, lineage and discovery.
-•	Data quality framework.
-•	Classification, stewardship and ownership model.
-•	Policy as code, where applicable.
+    * Catalog, lineage and discovery.
+    * Data quality framework.
+    * Classification, stewardship and ownership model.
+    *Policy as code, where applicable.
 7. Security
-•	Encryption at rest and in transit, key management.
-•	Network isolation and perimeter design.
-•	PII handling, tokenisation, masking.
-•	Audit, monitoring and incident response.
+    * Encryption at rest and in transit, key management.
+    * Network isolation and perimeter design.
+    * PII handling, tokenisation, masking.
+    * Audit, monitoring and incident response.
 
-Cross-cutting questions to address
-•	Customisability — where have you deliberately designed for swappable components, and what have you locked in?
-•	Cost control — how do costs behave from year one to year five?
-•	Scalability — what breaks first as you 10x the data?
-•	Operating model — who owns what, and how do teams interact with the platform?
+## Cross-cutting questions to address
+* Customisability — where have you deliberately designed for swappable components, and what have you locked in?
+* Cost control — how do costs behave from year one to year five?
+* Scalability — what breaks first as you 10x the data?
+* Operating model — who owns what, and how do teams interact with the platform?
 
-Be prepared for follow-up scenarios
+## Be prepared for follow-up scenarios
 During Q&A we may pose curveballs such as:
-•	"Budget is halved — what stays, what goes?"
-•	"A regulator mandates data residency in a new jurisdiction — how does your design respond?"
-•	"An acquisition doubles the data volume in six months — what changes?"
-•	"A critical vendor sunsets a key product — how exposed are you?"
+* "Budget is halved — what stays, what goes?"
+* "A regulator mandates data residency in a new jurisdiction — how does your design respond?"
+* "An acquisition doubles the data volume in six months — what changes?"
+* "A critical vendor sunsets a key product — how exposed are you?"
