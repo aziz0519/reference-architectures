@@ -38,18 +38,18 @@
 
 ## Context
 > A growing organisation is building its data platform from scratch and wants a modular, customisable lake architecture that can flex as the business evolves. Expected characteristics:
-•	Diverse sources: transactional databases, SaaS APIs, IoT and event streams, third-party file feeds.
-•	Multiple consumer personas: analysts, data scientists, business applications, external partners.
-•	Strict regulatory obligations across multiple jurisdictions (assume GDPR-equivalent at minimum).
-•	Expectation of rapid growth: 10x data volume and 5x user base within 3 years.
-•	Strong preference for open standards and avoidance of deep vendor lock-in where reasonable.
+* Diverse sources: transactional databases, SaaS APIs, IoT and event streams, third-party file feeds.
+* Multiple consumer personas: analysts, data scientists, business applications, external partners.
+* Strict regulatory obligations across multiple jurisdictions (assume GDPR-equivalent at minimum).
+* Expectation of rapid growth: 10x data volume and 5x user base within 3 years.
+* Strong preference for open standards and avoidance of deep vendor lock-in where reasonable.
 
 ## Pain points
-•	A growing backlog of AI use cases that need the same data.
-•	Security is a must but must be flexible to apply based on its use cases.
-•	Performance is key for good user experiences.
-•	Data is the crown jewel of the organization. E.g. How do you ensure data resiliency against ransomware, corruption, etc
-•	Price is limited. Open source is encouraged however support must still meet SLA.
+* A growing backlog of AI use cases that need the same data.
+* Security is a must but must be flexible to apply based on its use cases.
+* Performance is key for good user experiences.
+* Data is the crown jewel of the organization. E.g. How do you ensure data resiliency against ransomware, corruption, etc
+* Price is limited. Open source is encouraged however support must still meet SLA.
 
 ## The ask
 > Propose an end-to-end reference architecture covering the full data lifecycle. Your response should address each of the following capability areas:
