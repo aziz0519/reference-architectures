@@ -28,9 +28,8 @@ The following repository is a collection of reference architectures for various 
 ## Networking
 * VPC Peering
 * Air-Gapped Architecture
-* 3-Tier Architecture in AWS
-* 3-Tier Architecture in Azure
-* 3-Tier Architecture in GCP
+* [3-Tier Architecture in AWS](/networking/3Tier_AWS_Achitecture.md)
+* [3-Tier Architecture in GCP](/networking/3Tier_GCP_Architecture.md)
 
 
 ## Security
