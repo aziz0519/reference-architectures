@@ -34,3 +34,74 @@ The following repository is a collection of reference architectures for various 
 
 ## Security
 * Secure an application using the STRIDE framework
+
+```text 
+reference-architecture/
+|   AGENTS.md
+|   CODE_OF_CONDUCT.md
+|   CONTRIBUTING.md
+|   LICENSE
+|   README.md
+|   structure.txt
+|   
++---ai
+|   |   Agentic_AI_Blueprint.md
+|   |   Agentic_Data_Translator.md
+|   |   AWS_GenAI_Knowledge_Assistant.md
+|   |   Bias_Testing_to_Public_Cloud.md
+|   |   GenAI_Evaluation_Service.md
+|   |   Observatory.md
+|   |   Policy_Driven_AIGovernance.md
+|   |   ResponsibleAI_Architecture.md
+|   |   
+|   \---images
+|           ADT_CoreGCO.png
+|           ADT_Data_Products.png
+|           AgenticAI_Blueprint.png
+|           Bias_Testing_DBX.png
+|           BT_Process.png
+|           GenAi_Eval_Solution_Arch.png
+|           GenAI_HLD.png
+|           GES_HLD.png
+|           GES_Workflow.png
+|           Observatory.png
+|           Sentry_Graph.png
+|           
++---analytics
+|   |   AWS_EnterpriseDataHub.md
+|   |   DataEngineering_LambdaArch.md
+|   |   
+|   \---images
+|           EDH_ContextDiagram.png
+|           EDH_HLD.png
+|           HLD_DE_SequenceDiagram.png
+|           IVRS_EDH.png
+|           LambdaArch_HLD.png
+|           
++---devops
+|       Kinesis_Firehose_TF.md
+|       Web_App_Architecture.md
+|       
++---interview-questions
+|       AI-Architect.md
+|       Data-Architect.md
+|       
++---migration
+|   |   Bitbucket_GitHub_Migration.md
+|   |   Migration_OnPrem_Cloud.md
+|   |   
+|   \---images
++---networking
+|   |   3Tier_AWS_Architecture.md
+|   |   3Tier_GCP_Architecture.md
+|   |   
+|   \---images
+|           3_tier_aws.jpeg
+|           arch-todo.svg
+|           
+\---security
+    |   Defense_in_depth.md
+    |   Least_Privilege_Access.md
+    |   
+    \---images
+```
