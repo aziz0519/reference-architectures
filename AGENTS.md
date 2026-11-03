@@ -1,20 +1,23 @@
 # AGENTS.md
 
-## What this repo is
-- Documentation-only collection of reference architectures. There is no package manifest, build, test, lint, or CI config; verification is manual.
-- Content lives under topic directories: `ai/`, `analytics/`, `devops/`, `migration/`, `networking/`, `security/`, `interview-questions/`. Images go in the matching `*/images/` folder.
+## Repo shape
+- Docs-only collection of reference architectures: no package manifest, build, test, lint, formatter, or CI. Do not add tooling/scaffolding unless asked.
+- Content is grouped by topic: `ai/`, `analytics/`, `devops/`, `migration/`, `networking/`, `security/`, `interview-questions/`. Images live in the matching `*/images/` folder (not every topic has one).
+- Docs are standalone Markdown with inline Mermaid and doc-relative images; there is no site generator or front matter.
 
 ## Critical: line endings
-- Committed blobs (`HEAD`/index) are LF, but the current working tree is CRLF. As a result, `git status` reports almost every tracked Markdown file as modified even when content is unchanged.
-- Review real changes with `git diff --ignore-space-at-eol`; do not stage or commit line-ending-only churn.
-- There is no `.gitattributes`. If you need a content-only diff, convert the edited file to LF rather than mass-normalizing the repo.
+- Committed blobs (`HEAD`/index) are LF, but working-tree Markdown is CRLF. `git status` reports almost every tracked doc as modified even when content is unchanged.
+- Review real changes with `git diff --ignore-space-at-eol` (add `--name-only` to list them); do not stage or commit line-ending-only churn.
+- There is no `.gitattributes`. Preserve each file's existing endings (CRLF for docs, LF for this file) rather than mass-normalizing the repo.
 
 ## Editing conventions
-- `README.md` is the index. Add new docs under the matching section (some sections still have unlinked placeholder bullets), but note the index is incomplete: several existing docs are not listed.
-- Links are mixed root-relative (`/ai/...`) and relative (`./ai/...`); images use paths relative to the doc (usually `./images/...`). When renaming/moving files, update every link and image reference.
-- Mermaid diagrams are embedded inline using fenced `mermaid` code blocks. Ensure they still parse/render after edits.
+- `README.md` is the public index; add new docs under the matching section. It is incomplete: several tracked docs are unlisted, and some bullets (e.g. Databricks Unity Catalog, VPC Peering, Air-Gapped) have no file yet. Do not invent links for placeholders.
+- Links are mixed root-relative (`/ai/...`) and relative (`./ai/...`); images are doc-relative (`./images/...`). Renaming/moving a doc requires updating every reference and the README entry.
+- Preserve the misspelled path `networking/3Tier_AWS_Achitecture.md` unless you update all references.
 - Most architecture docs follow: Problem Statement → Business Opportunity/Solution → Architecture/Diagrams → Technical Stack → Outcomes or Failure Modes. Match the surrounding doc's structure.
-- Keep client and company names redacted, per the README's NDA/confidentiality note.
+- `ai/ResponsibleAI_Architecture.md` and `security/Defense_in_depth.md` are tracked but contain only a title; expand them rather than assuming content exists.
+- Keep client and company names redacted per the README's NDA/confidentiality note; use generic roles/industries.
 
 ## Before finishing
-- Manually verify internal links and image targets resolve, Mermaid blocks render, and `README.md` links any newly added document. (`CONTRIBUTING.md` requires these checks.)
+- There are no automated checks. Manually verify every internal link and image target resolves, fenced `mermaid` blocks still render, and any new doc is linked from `README.md` (`CONTRIBUTING.md` requires these).
+- Use `git diff --ignore-space-at-eol -- <files>` to confirm only intended content changed.
