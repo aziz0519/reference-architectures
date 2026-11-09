@@ -1,0 +1,20 @@
+name: Updates
+
+on:
+    push:
+        branches: [main]
+
+permissions:
+    contents: read
+    
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check out repository
+        uses: actions/checkout@v7
+
+      - name: generate a success message
+        run: echo Job Completed! 
+
+
